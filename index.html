@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de espécies de insetos</title>
+
+  <!-- include bootstrap css -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <!-- include own style.css -->
+    <link href="album.css">
+  <link href="style.css">
+
+</head>
+<body>
+
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading" id="sitetitle">Album example</h1>
+        <p class="lead text-muted" id="author">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+      </div>
+    </section>
+
+    <div class="row" id="selectedspecie" style="display:none">
+        <!-- selected insect info is displayed here -->
+        <div class="container">
+          <div class="col-md-6" id="imagem">
+          </div>
+          <div class="col-md-6">
+            <h1 id="nomecomum"></h1>
+            <p><b>Espécie:</b> <span id="especie"></span></p>
+            <p><b>Família:</b> <span id="familia"></span></p>
+            <p><b>Ordem:</b> <span id="ordem"></span></p>
+            <p><b>Classe:</b> <span id="classe"></span></p>
+
+            <p><span id="descricao"></span></p>
+            <p><b>Habitat:</b> <span id="habitat"></span></p>
+            <p><b>Morfologia:</b> <span id="morfologia"></span></p>
+            <p><b>Alimentação:</b> <span id="alimentacao"></span></p>
+            <p><b>Ciclo de vida:</b> <span id="ciclodevida"></span></p>
+
+          </div>
+        </div>
+        <hr />
+    </div>
+
+    <div class="row">
+      
+        <!-- insects are inserted here -->
+        <div id="insertPos" class="container"></div>
+    </div>
+
+    <footer class="container" style="padding-top: 20px;">
+
+      <p align="center">Desenvolvido por <a href="http://www.davidsilva.pt">David Silva</a></p>
+    </footer>
+
+
+<!-- firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDiBK5xSpX0S_9JZq7RUvGYznETC09poZk",
+    authDomain: "blazing-inferno-6006.firebaseapp.com",
+    databaseURL: "https://blazing-inferno-6006.firebaseio.com",
+    projectId: "blazing-inferno-6006",
+    storageBucket: "blazing-inferno-6006.appspot.com",
+    messagingSenderId: "730114893113"
+  };
+  var app = firebase.initializeApp(config);
+</script>
+
+<!-- include jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- include bootstrap js -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- include custom js -->
+<script src="script.js"></script>
+</body>
+</html>
