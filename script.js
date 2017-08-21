@@ -1,14 +1,14 @@
 // settings
 var site_title = "Catálogo de espécies";
-var author = "David Gabriel";
+var description = "David Gabriel";
 
-var firebase_db = "";
+var species_array = {};
 
 // start here
 $.ready = function() {
     // set site title and author
     $("#sitetitle").text(site_title);
-    $("#author").text(author);
+    $("#description").text(description);
 
     // connect to firebase
     var database = firebase.database(); 
@@ -19,20 +19,12 @@ $.ready = function() {
 
         $("#insertPos").html(current + getNewSpecieHtml(snap.key, snap.val()));
 
-        // update current specie info
-        $("#info-"+snap.key).click(
-            function(e) {
-                e.preventDefault(); 
-                updateInfo(snap.val());
-                return false; 
-            }
-        );
+        var key = snap.key;
+        species_array[key] = snap.val();
     });
-
 }
 
 function getNewSpecieHtml(key, specie) {
-    console.log(specie);
     return `
         <div class="col-sm-6 col-md-4">
         <div class="thumbnail"> `+
@@ -41,16 +33,18 @@ function getNewSpecieHtml(key, specie) {
             '<h3>'+specie.nomecomum +'</h3>' +
             '<p>'+specie.classe +'</p>' +
             '<p>'+specie.familia +'</p>' +
-            '<p align="center"><a href="#" class="btn btn-primary" role="button" id="info-'+key+'">Mais info</a></p>'+
+            '<p align="center"><a href="javascript:updateInfo(\''+key+'\');" class="btn btn-primary" role="button">Mais info</a></p>'+
         `</div>
         </div>
     </div>`;
 }
 
-function updateInfo(specie) {
+function updateInfo(specieName) {
+
+    var specie = species_array[specieName];
     $("#selectedspecie").css("display", "block");
 
-    $("#imagem").html('<img src="'+specie.imagem+'">');
+    $("#imagem").html('<img style="max-width: 100%" src="'+specie.imagem+'">');
     $("#nomecomum").text(specie.nomecomum);
     $("#especie").text(specie.especie);
     $("#familia").text(specie.familia);
