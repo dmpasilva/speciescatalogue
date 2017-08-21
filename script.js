@@ -55,4 +55,5 @@ function updateInfo(specieName) {
     $("#morfologia").text(specie.morfologia);
     $("#alimentacao").text(specie.alimentacao);
     $("#ciclodevida").text(specie.ciclodevida);
+    $("#habitat").text(specie.habitat);
 }
