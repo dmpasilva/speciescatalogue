@@ -6,7 +6,8 @@
 
   <!-- include bootstrap css -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+  <link href="style.css" rel="stylesheet" >
+  
 </head>
 <body>
 
@@ -14,13 +15,19 @@
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading" id="sitetitle">Catálogo de espécies</h1>
-        <p class="lead text-muted" id="description">Catálogo de espécies</p>
+        <!-- <p class="lead text-muted" >Catálogo de espécies</p> -->
       </div>
     </section>
 
     <div class="row" id="selectedspecie" style="display:none">
         <!-- selected insect info is displayed here -->
+        
         <div class="container">
+          <div class="col-md-12">
+           <p align="right"><a class="btn btn-danger" role="button" href="javascript:closeInfo();">&times; Fechar</a></p>
+            
+          </div>
+          
           <div class="col-md-6" id="imagem">
           </div>
           <div class="col-md-6">
@@ -42,14 +49,20 @@
     </div>
 
     <div class="row">
-      
+
         <!-- insects are inserted here -->
         <div id="insertPos" class="container"></div>
+
+        <hr />
+        <div class="container">
+            <h1>Sobre esta coleção</h1>
+            <p id="description"></p>            
+          </div>
     </div>
-
+    <hr />
     <footer class="container" style="padding-top: 20px;">
-
-      <p align="center">Desenvolvido por <a href="http://www.davidsilva.pt">David Silva</a></p>
+      
+      <p align="center">Desenvolvido por <a href="http://www.davidsilva.pt">David Silva</a>  |  <a href="https://github.com/dmpasilva/speciescatalogue">Código-fonte</a></p>
     </footer>
 
 

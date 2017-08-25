@@ -1,6 +1,11 @@
 // settings
-var site_title = "Catálogo de espécies";
-var description = "David Gabriel";
+var site_title = "Coleção Biológica do Jardim Botânico da Universidade do Porto";
+var description = `Esta coleção foi criada durante o estágio de David Sousa, 
+    \"A importância das coleções biológicas: um caso de estudo com insetos\", 
+orientado pela Profª Doutora Sara Cristina Ferreira Marques Antunes,
+na Faculdade de Ciências da Universidade do Porto. 
+Este trabalho teve como objetivo recolher, identificar e começar uma coleção biológica
+da comunidade edáfica para obter informações acerca da biodiversidade desta área específica.` ;
 
 var species_array = {};
 
@@ -32,11 +37,15 @@ function getNewSpecieHtml(key, specie) {
         '<div class="caption">' +
             '<h3>'+specie.nomecomum +'</h3>' +
             '<p>'+specie.classe +'</p>' +
-            '<p>'+specie.familia +'</p>' +
+            '<p>'+specie.ordem +'</p>' +
             '<p align="center"><a href="javascript:updateInfo(\''+key+'\');" class="btn btn-primary" role="button">Mais info</a></p>'+
         `</div>
         </div>
     </div>`;
+}
+
+function closeInfo() {
+    $("#selectedspecie").css("display", "none");
 }
 
 function updateInfo(specieName) {
@@ -56,4 +65,6 @@ function updateInfo(specieName) {
     $("#alimentacao").text(specie.alimentacao);
     $("#ciclodevida").text(specie.ciclodevida);
     $("#habitat").text(specie.habitat);
+
+    window.scrollTo(0,0);
 }
