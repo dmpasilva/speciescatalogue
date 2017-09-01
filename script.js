@@ -54,17 +54,18 @@ function updateInfo(specieName) {
     $("#selectedspecie").css("display", "block");
 
     $("#imagem").html('<img style="max-width: 100%" src="'+specie.imagem+'">');
-    $("#nomecomum").text(specie.nomecomum);
-    $("#especie").text(specie.especie);
-    $("#familia").text(specie.familia);
-    $("#ordem").text(specie.ordem);
-    $("#especie").text(specie.especie);
-    $("#classe").text(specie.classe);
-    $("#descricao").text(specie.descricao);
-    $("#morfologia").text(specie.morfologia);
-    $("#alimentacao").text(specie.alimentacao);
-    $("#ciclodevida").text(specie.ciclodevida);
-    $("#habitat").text(specie.habitat);
+    $("#nomecomum").html(specie.nomecomum);
+    $("#identificacao").html(specie.identificacao);
+    $("#especie").html(specie.especie);
+    $("#familia").html(specie.familia);
+    $("#ordem").html(specie.ordem);
+    $("#especie").html(specie.especie);
+    $("#classe").html(specie.classe);
+    $("#descricao").html(specie.descricao);
+    $("#morfologia").html(specie.morfologia);
+    $("#alimentacao").html(specie.alimentacao);
+    $("#ciclodevida").html(specie.ciclodevida);
+    $("#habitat").html(specie.habitat);
 
     window.scrollTo(0,0);
 }
